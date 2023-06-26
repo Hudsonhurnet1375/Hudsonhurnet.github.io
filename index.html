@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Loving Letter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<section>
+		<p class="text">Slam be aziz delam ELita snow</p>
+	</section>
+	<h2>I love You Elita-Snow</h2>
+	<script type="text/javascript" src="anime.min.js"></script>
+	<script>
+		// now , split text into letters
+		const text = document.querySelector('.text');
+		text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+		const animation = anime.timeline({
+			targets : '.text span',
+			easing : 'easeInOutExpo',
+			loop : true,
+		});
+
+		animation.add({
+			rotate : function(){
+				return anime.random(-360,360)
+			},
+			translateX : function(){
+				return anime.random(-500,500)
+			},
+			translateY : function(){
+				return anime.random(-500,500)
+			},
+			duration : 10000,
+			delay : anime.stagger(60),
+		})
+
+
+		.add({
+			rotate : 0,
+			translateX : 0,
+			translateY : 0,
+			duration : 5000,
+			delay : anime.stagger(60),
+		})
+
+
+		
+	</script>
+</body>
+</html>
